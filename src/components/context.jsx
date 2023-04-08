@@ -28,6 +28,10 @@ const AppProvaider = ({children}) => {
     dispatch({type: 'DEC', payload: id})
   }
 
+  // useEffect(() => {
+  //   dispatch({type: 'GET_TOTALS'})
+  // }, [state.cart])
+
     return (
         <AppContext.Provider value={{increment,...state,removeItem,clearCart,decrement}}>
             {children}

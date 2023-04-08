@@ -14,7 +14,6 @@ export default function Navbar() {
           {amount}
         </div>
       </div>
-      
     </div>
   )
 }
