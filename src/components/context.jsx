@@ -24,25 +24,12 @@ const AppProvaider = ({children}) => {
   const increment = (id) => {
     dispatch({type: 'INC', payload: id})
   }
-
-  // const [inc, setInc] = useState(0)
-  // const increment = (inc) => {
-  //   setInc(inc + 1)
-  // } 
-
-  // const decrement = (inc) => {
-  //   setInc(inc - 1)
-  // }
-
-
-
-    // const removeItem = (id) => {
-    //     const newItem = post.filter((item) => item.id !== id);
-    //     setPost(newItem);
-    // }
+  const decrement = (id) => {
+    dispatch({type: 'DEC', payload: id})
+  }
 
     return (
-        <AppContext.Provider value={{increment,...state,removeItem,clearCart}}>
+        <AppContext.Provider value={{increment,...state,removeItem,clearCart,decrement}}>
             {children}
         </AppContext.Provider>
     )

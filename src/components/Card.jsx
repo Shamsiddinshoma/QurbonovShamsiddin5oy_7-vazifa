@@ -3,7 +3,7 @@ import { useGlobalContext } from './context'
 
 export default function Item({id,title,img,price,amount}) {
 
-    const {increment,removeItem} = useGlobalContext()
+    const {increment,removeItem,decrement} = useGlobalContext()
 
   return (
         <div className='card'>
@@ -18,9 +18,8 @@ export default function Item({id,title,img,price,amount}) {
             <div className="incDec">
               <button onClick={() => increment(id)} className='incbtn'><img src="https://cdn-icons-png.flaticon.com/512/64/64589.png" alt="" /></button>
               {amount}
-              <button className='decbtn'><img src="https://cdn-icons-png.flaticon.com/512/2609/2609201.png" alt="" /></button>
+              <button onClick={() => decrement(id)} className='decbtn'><img src="https://cdn-icons-png.flaticon.com/512/2609/2609201.png" alt="" /></button>
             </div>
-            
           </div>
   )
 }
