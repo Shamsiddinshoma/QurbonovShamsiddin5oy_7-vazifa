@@ -1,46 +1,52 @@
-import { createContext, useState,useEffect,useContext,useReducer } from "react";
-import data from "./data";
-import reducer from "./reducer";
-const AppContext = createContext();
+// import { createContext, useState,useEffect,useContext,useReducer } from "react";
+// import data from "./data";
+// import reducer from "./reducer";
+// const AppContext = createContext();
 
-const initialState = {
-  cart: data,
-  total: 0,
-  amount: 0,
-}
+// const initialState = {
+//   cart: data,
+//   total: 0,
+//   amount: 0,
+// }
 
-const AppProvaider = ({children}) => {
 
-  const [state,dispatch] = useReducer(reducer, initialState);
+// const AppProvaider = ({children}) => {
 
-  const removeItem = (id) => {
-    dispatch({type: 'REMOVE', payload: id})
-  }
+//   const [state,dispatch] = useReducer(reducer, initialState);
 
-  const clearCart = () => {
-    dispatch({type: 'CLEAR_CART'})
-  }
+//   const removeItem = (id) => {
+//     dispatch({type: 'REMOVE', payload: id})
+//   }
 
-  const increment = (id) => {
-    dispatch({type: 'INC', payload: id})
-  }
-  const decrement = (id) => {
-    dispatch({type: 'DEC', payload: id})
-  }
+//   const clearCart = () => {
+//     dispatch({type: 'CLEAR_CART'})
+//   }
 
-  // useEffect(() => {
-  //   dispatch({type: 'GET_TOTALS'})
-  // }, [state.cart])
+//   const increment = (id) => {
+//     dispatch({type: 'INC', payload: id})
+//   }
+//   const decrement = (id) => {
+//     dispatch({type: 'DEC', payload: id})
+//   }
 
-    return (
-        <AppContext.Provider value={{increment,...state,removeItem,clearCart,decrement}}>
-            {children}
-        </AppContext.Provider>
-    )
-}
+//   // useEffect(() => {
+//   //   dispatch({type: 'GET_TOTALS'})
+//   // }, [state.cart])
 
-export const useGlobalContext = () => {
-    return useContext(AppContext)
-}
+//     return (
+//         <AppContext.Provider value={{increment,...state,removeItem,clearCart,decrement}}>
+//             {children}
+//         </AppContext.Provider>
+//     )
+// }
 
-export {AppContext, AppProvaider}
+// export const useGlobalContext = () => {
+//     return useContext(AppContext)
+// }
+
+// export {AppContext, AppProvaider}
+
+
+
+
+

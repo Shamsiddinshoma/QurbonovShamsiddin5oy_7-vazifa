@@ -1,10 +1,10 @@
 import React from 'react'
-import { useGlobalContext } from './context'
 import korzinka from '../assets/korzinka.png'
-
+import { useSelector } from 'react-redux'
+import { store } from '../store'
 
 export default function Navbar() {
-  const {amount} = useGlobalContext()
+  const {amount} = useSelector((store) => store.cart)
   return (
     <div className='nav'>
       <div className="korzinka">
