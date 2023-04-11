@@ -6,13 +6,13 @@ import { clearCart, totalYigish} from '../features/cart';
 
 export default function Proditem() {
 
-const {cart,total} = useSelector((store) => store.cart);
-const dispatch = useDispatch()
+  const {cart,total} = useSelector((store) => store.cart)
+  const dispatch = useDispatch()
 
 
-
-
-
+useEffect(() => {
+  dispatch(totalYigish());
+}, [cart]);
 
   return (
     <div className='pIteam'>
