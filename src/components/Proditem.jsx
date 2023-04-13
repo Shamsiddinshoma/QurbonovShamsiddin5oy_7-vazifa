@@ -31,7 +31,7 @@ useEffect(() => {
           <h2>TOTAL</h2>
         </div>
         <div className="trigth">
-          <h2>{total}</h2>
+          <h2>{total.toFixed(2)}</h2>
         </div>
       </div>
       <button className='clearbtn' onClick={() => dispatch(clearCart())}>CLEAR CART</button>
