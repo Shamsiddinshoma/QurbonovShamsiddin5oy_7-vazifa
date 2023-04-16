@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import Card from './Card'
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, totalYigish} from '../features/cart';
+import Navbar from './Navbar';
 
 
-export default function Proditem() {
+export default function Proditem({user}) {
 
   const {cart,total} = useSelector((store) => store.cart)
   const dispatch = useDispatch()
@@ -15,9 +16,12 @@ useEffect(() => {
 }, [cart]);
 
   return (
+    
     <div className='pIteam'>
-      <h2 className='yb'>YOUR BAG</h2>
-      <div>
+      <Navbar />
+      <h2 className='yb'>{user
+      .name} BAG</h2>
+      <div className='proditem'>
       {cart.map((prod) => {
         return(
           <Card key={prod.id} {...prod}/>
